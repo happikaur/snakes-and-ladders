@@ -1,32 +1,59 @@
 $background: forestgreen;
-$box1: aqua;
-$box2:rgb(189, 57, 189);
+$box1: rgb(248, 157, 83);
+$box2:rgb(91, 81, 139);
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 #board {
   width: 500px;
   height: 500px;
   border: 2px black solid;
   display: flex;
   flex-wrap: wrap;
-
+  flex-direction: row-reverse;
+ 
+  
   .box {
     width: 100px;
     height: 100px;
     border: 1px black solid;
-    
+    box-sizing: border-box;
+    padding: 10px;
 
-    .one {
-      background: $box1;
+    &.one {
+      background-color: $box1;
     }
-    .two {
+
+    &.two {
       background: $box2;
+      color: white;
+    }
+
+    .number {
+      display: block;
+      text-align: right;
+      font-weight: bold;
     }
   }
+}
+
+.player {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+
+  &.one {
+    background-color: red;
+  }
+
+  &.two {
+    background-color: black;
+  }
+ 
 }

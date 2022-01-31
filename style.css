@@ -1,7 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #board {
@@ -10,15 +13,36 @@
   border: 2px black solid;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 #board .box {
   width: 100px;
   height: 100px;
   border: 1px black solid;
+  box-sizing: border-box;
+  padding: 10px;
 }
-#board .box .one {
-  background: aqua;
+#board .box.one {
+  background-color: #f89d53;
 }
-#board .box .two {
-  background: #bd39bd;
+#board .box.two {
+  background: #5b518b;
+  color: white;
+}
+#board .box .number {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+}
+
+.player {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+.player.one {
+  background-color: red;
+}
+.player.two {
+  background-color: black;
 }
