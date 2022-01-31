@@ -9,51 +9,60 @@ $box2:rgb(91, 81, 139);
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
-#board {
-  width: 500px;
-  height: 500px;
-  border: 2px black solid;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
- 
-  
-  .box {
-    width: 100px;
-    height: 100px;
-    border: 1px black solid;
-    box-sizing: border-box;
-    padding: 10px;
+
+.board {
+  position: relative;
+
+  .boxes {
+    width: 500px;
+    height: 500px;
+    border: 2px black solid;
+    display: flex;
+    flex-wrap: wrap;
+    // need to correct this in html
+    flex-direction: row-reverse;
+    margin: 0 auto;
+
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px black solid;
+      box-sizing: border-box;
+      padding: 10px;
+
+      &.one {
+        background-color: $box1;
+      }
+
+      &.two {
+        background: $box2;
+        color: white;
+      }
+
+      .number {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .player {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    position: absolute;
 
     &.one {
-      background-color: $box1;
+      background-color: red;
     }
 
     &.two {
-      background: $box2;
-      color: white;
-    }
-
-    .number {
-      display: block;
-      text-align: right;
-      font-weight: bold;
+      background-color: black;
     }
   }
 }
 
-.player {
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
 
-  &.one {
-    background-color: red;
-  }
-
-  &.two {
-    background-color: black;
-  }
- 
-}

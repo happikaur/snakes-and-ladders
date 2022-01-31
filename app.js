@@ -1,3 +1,6 @@
+const boxes = document.querySelectorAll('.box')
+
+
 // Boxes number need to flow and not break
 // Person need to choose the avatar
 // Enter the name
@@ -9,3 +12,4 @@
 // If in the box with snake go down to the box number where snake ends
 
 
+console.log(document.querySelectorAll('.box')[24].getBoundingClientRect())
