@@ -1,0 +1,32 @@
+$background: forestgreen;
+$box1: aqua;
+$box2:rgb(189, 57, 189);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#board {
+  width: 500px;
+  height: 500px;
+  border: 2px black solid;
+  display: flex;
+  flex-wrap: wrap;
+
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    
+
+    .one {
+      background: $box1;
+    }
+    .two {
+      background: $box2;
+    }
+  }
+}
