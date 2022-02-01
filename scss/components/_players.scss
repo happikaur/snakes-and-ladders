@@ -1,0 +1,20 @@
+.player {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  // position: absolute;
+
+  &.one {
+    img{
+      width: 70px;
+      height:70px;
+    }
+  }
+
+  &.two {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

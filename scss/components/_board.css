@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.player {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+.player.one img {
+  width: 70px;
+  height: 70px;
+}
+.player.two img {
+  width: 60px;
+  height: 60px;
+}
+
+.board {
+  position: relative;
+}
+.board .boxes {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+.board .boxes .box {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+.board .boxes .box.one {
+  background-color: #f89d53;
+}
+.board .boxes .box.two {
+  background: #5b518b;
+  color: #fff;
+}
+.board .boxes .box .number {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+}

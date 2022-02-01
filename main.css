@@ -1,11 +1,26 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+}
+
+.player {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+.player.one img {
+  width: 70px;
+  height: 70px;
+}
+.player.two img {
+  width: 60px;
+  height: 60px;
 }
 
 .board {
@@ -14,17 +29,14 @@ body {
 .board .boxes {
   width: 500px;
   height: 500px;
-  border: 2px black solid;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
   margin: 0 auto;
+  flex-flow: wrap-reverse;
 }
 .board .boxes .box {
   width: 100px;
   height: 100px;
-  border: 1px black solid;
-  box-sizing: border-box;
   padding: 10px;
 }
 .board .boxes .box.one {
@@ -32,22 +44,39 @@ body {
 }
 .board .boxes .box.two {
   background: #5b518b;
-  color: white;
+  color: #fff;
 }
 .board .boxes .box .number {
   display: block;
   text-align: right;
   font-weight: bold;
 }
-.board .player {
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.player {
   width: 30px;
   height: 30px;
   border-radius: 100px;
-  position: absolute;
 }
-.board .player.one {
-  background-color: red;
+.player.one img {
+  width: 70px;
+  height: 70px;
 }
-.board .player.two {
-  background-color: black;
+.player.two img {
+  width: 60px;
+  height: 60px;
+}
+
+.dice {
+  background-color: #fff;
 }

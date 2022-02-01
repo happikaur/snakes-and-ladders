@@ -1,0 +1,40 @@
+@import '../abstracts/variables';
+@import '../layout/layout';
+@import '../components/players';
+
+
+.board {
+  position: relative;
+
+  // @media screen and (max-width: 300px) {
+  //   display: none;
+  // }
+
+  .boxes {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+
+
+    .box {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+
+      &.one {
+        background-color: $box1;
+      }
+
+      &.two {
+        background: $box2;
+        color: $white;
+      }
+
+      .number {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+      }
+    }
+  }
+}
