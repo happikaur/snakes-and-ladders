@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +11,8 @@ body {
 }
 
 .player {
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
+  position: absolute;
+  z-index: 1;
 }
 .player.one img {
   width: 70px;
@@ -23,9 +23,6 @@ body {
   height: 60px;
 }
 
-.board {
-  position: relative;
-}
 .board .boxes {
   width: 500px;
   height: 500px;
