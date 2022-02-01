@@ -30,6 +30,8 @@ body {
   width: 500px;
   height: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 .board .boxes .box {
   width: 100px;

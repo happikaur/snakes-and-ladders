@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+.welcome-message .one {
+  width: 70px;
+  height: 70px;
+}
+.welcome-message .two {
+  width: 60px;
+  height: 60px;
+}

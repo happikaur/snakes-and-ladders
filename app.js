@@ -1,4 +1,5 @@
-const boxes = document.querySelectorAll('.box')
+const boxes = document.querySelectorAll('.box');
+const store = {};
 
 
 // Boxes number need to flow and not break
