@@ -1,41 +1,87 @@
 const boxes = document.querySelectorAll('.box');
 const player1 = document.querySelector('.player.one');
 const player2 = document.querySelector('.player.two');
+const welcomePopUp = document.querySelector('.welcome-message');
+const congrats = document.querySelector('.who-won');
+const whoWon = document.querySelector('.won-or-lose');
+const dice = document.querySelector('.dice');
+
+let isGameEnded = false;
+const lastBox = 25;
 
 const store = {
   player1: {x:0, y:0, currentBox:0},
   player2: {x:0, y:0, currentBox:0},
   diceNumber: 0,
+  currentPlayer: player1,
 };
 
 const throwDice = () => {
-  return Math.floor(Math.random() * 6) + 1;
+ const diceNum = Math.floor(Math.random() * 6) + 1;
+ return diceNum;
 }
 
-const movePlayer = (diceNumber, currentBox) => {
+const calculateNewBox = (diceNumber, currentBox) => {
   // Find the current box of the player
   const newBox = diceNumber + currentBox;
+
+  if (newBox >= lastBox) {
+    isGameEnded = true;
+    movePlayerToBox(lastBox, player1);  
+    welcomePopUp.style.display = 'none';
+    whoWon.innerHTML = store.currentPlayer.id === 'player1' ? 'You Won' : 'Computer Won';
+    congrats.style.display = 'block';
+  }
+
   return newBox;
 }
 
+dice.addEventListener ('click', (event) => {
+  startGame()
+})
+
 const findBoxPosition = (boxNumber) => {
   const box = document.getElementById(`${boxNumber}`);
-  const boxPos = box.getBoundingClientRect();
-  return {x:boxPos.left, y:boxPos.top};
+  // console.log('box', box);
+  // const boxPos = box.getBoundingClientRect();
+  // console.log(boxPos);
+  // const x = boxPos.top + (boxPos.width / 2) - 25;
+  // const y = boxPos.left + (boxPos.height / 2) - 25;
+  return box
 }
 
-store.diceNumber = throwDice();
+const movePlayerToBox = (newBox, player) => {
+  const box = findBoxPosition(newBox);
 
-store.player1.currentBox = movePlayer(store.diceNumber, store.player1.currentBox);
+  box.appendChild(player);
+  // player.style.top = `${xyBox.y}px`;
+  // player.style.left = `${xyBox.x}px`;
 
-const xyBox = findBoxPosition(store.player1.currentBox);
-player1.style.top = xyBox.y;
-player1.style.left = xyBox.x;
-store.player1.x = xyBox.x;
-store.player1.y = xyBox.y;
+  // store[player.id].y = xyBox.y;
+  // store[player.id].x = xyBox.x;
+}
 
-console.log(store);
-console.log(player1);
+window.onload = () => startGame()
+
+const startGame = () => {
+  store.diceNumber = throwDice();
+  const currentPlayer = store.currentPlayer
+
+  store[currentPlayer.id].currentBox = calculateNewBox(store.diceNumber, store[currentPlayer.id].currentBox);
+
+  movePlayerToBox(store[currentPlayer.id].currentBox, store.currentPlayer);
+
+  if (currentPlayer.id === 'player1') {
+    store.currentPlayer = player2
+  } else if (currentPlayer.id === 'player2') {
+    store.currentPlayer = player1
+  }
+
+  console.log(store);
+  console.log(currentPlayer.id);  
+}
+
+
 
 // Boxes number need to flow and not break
 // Person need to choose the avatar
