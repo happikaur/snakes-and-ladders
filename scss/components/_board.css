@@ -23,6 +23,9 @@ body {
   height: 50px;
 }
 
+.board {
+  position: relative;
+}
 .board .boxes {
   width: 500px;
   height: 500px;

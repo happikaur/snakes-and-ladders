@@ -17,15 +17,22 @@ body {
   position: absolute;
   z-index: 1;
 }
+.player.one {
+  animation-duration: 1s;
+  animation-direction: normal;
+}
 .player.one img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 .player.two img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 
+.board {
+  position: relative;
+}
 .board .boxes {
   width: 500px;
   height: 500px;
@@ -66,13 +73,17 @@ body {
   position: absolute;
   z-index: 1;
 }
+.player.one {
+  animation-duration: 1s;
+  animation-direction: normal;
+}
 .player.one img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 .player.two img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 
 .dice {
@@ -116,4 +127,42 @@ body {
 
 .who-won {
   display: none;
+}
+
+.ladder-one {
+  position: absolute;
+  top: 327px;
+  left: 300px;
+}
+
+.ladder-two {
+  position: absolute;
+  top: 142px;
+  left: 298px;
+}
+
+.snake-one {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.snake-two {
+  position: absolute;
+  top: 257px;
+  left: 122px;
+  width: 200px;
+}
+.snake-two img {
+  width: 100%;
+}
+
+.snake-three {
+  position: absolute;
+  top: 45px;
+  left: 395px;
+  width: 80px;
+}
+.snake-three img {
+  width: 100%;
 }

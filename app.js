@@ -16,6 +16,16 @@ const store = {
   currentPlayer: player1,
 };
 
+const snakesLadders = {
+  // Ladders
+  3: 7,
+  14: 18,
+  // Snakes
+  11:8,
+  21:19,
+  24:17,
+};
+
 const throwDice = () => {
  const diceNum = Math.floor(Math.random() * 6) + 1;
  return diceNum;
@@ -25,12 +35,17 @@ const calculateNewBox = (diceNumber, currentBox) => {
   // Find the current box of the player
   const newBox = diceNumber + currentBox;
 
+  if (snakesLadders[newBox]) {
+    return snakesLadders[newBox];
+  }
+
   if (newBox >= lastBox) {
     isGameEnded = true;
     movePlayerToBox(lastBox, player1);  
     welcomePopUp.style.display = 'none';
     whoWon.innerHTML = store.currentPlayer.id === 'player1' ? 'You Won' : 'Computer Won';
     congrats.style.display = 'block';
+    return 
   }
 
   return newBox;
@@ -61,7 +76,7 @@ const movePlayerToBox = (newBox, player) => {
   // store[player.id].x = xyBox.x;
 }
 
-window.onload = () => startGame()
+// window.onload = () => startGame()
 
 const startGame = () => {
   store.diceNumber = throwDice();

@@ -1,0 +1,37 @@
+.ladder-one {
+  position: absolute;
+  top: 327px;
+  left: 300px;
+}
+
+.ladder-two {
+  position: absolute;
+  top: 142px;
+  left: 298px;
+}
+
+.snake-one {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.snake-two {
+  position: absolute;
+  top: 257px;
+  left: 122px;
+  width: 200px;
+}
+.snake-two img {
+  width: 100%;
+}
+
+.snake-three {
+  position: absolute;
+  top: 45px;
+  left: 395px;
+  width: 80px;
+}
+.snake-three img {
+  width: 100%;
+}
