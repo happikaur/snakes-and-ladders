@@ -1,0 +1,27 @@
+@import '../abstracts/variables';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.font-dancing {
+  font-size: 40px;
+  font-weight: 600;
+  color: $welcome;
+  font-family: "Dancing Script";
+}
+
+.heading {
+  font-size: 45px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.go {
+  .lets-roll {
+    background-color: $welcome;
+    color: $white;
+    font-size: large;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px;
+  }
+}

@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+.dice-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f89d53;
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.dice-wrapper .dice {
+  color: #290447;
+  font-size: 50px;
+}
+.dice-wrapper .dice i {
+  margin: 15px;
+}

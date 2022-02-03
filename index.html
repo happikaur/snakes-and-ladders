@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snakes and Ladders</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="./app.js" async defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+  <h1 class="font-dancing heading">SNAKES AND LADDERS</h1>
+
+  <div class="welcome-message">
+    <p class="welcome font-dancing">Welcome</p>
+    <div class="choose-avatar">
+      <label>
+        <img src="./images/tiger.png" alt="player1" class="one">
+      </label>
+      <label>
+        <img src="./images/elephant.png" alt="player2" class="two">
+      </label>
+    </div>
+    <div class="go">
+      <button class="lets-roll">Let's Roll</button>
+    </div>
+  </div>
+  <div class="welcome-background"></div>
+  
+  <div class="who-won">
+    <p class="greetings font-dancing">Congratulations!</p>
+    <img src="" class="which-avatar-won">
+    <p class="won-or-lose">You won!</p>
+    <div class="go">
+      <a class="play-again">Play Again?</a>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="boxes">
+      <div class="box one" id="21">
+        <span class="number">21</span>
+      </div>
+      <div class="box two" id="22">
+        <span class="number">22</span>
+      </div>
+      <div class="box one" id="23">
+        <span class="number">23</span>
+      </div>
+      <div class="box two" id="24">
+        <span class="number">24</span>
+      </div>
+      <div class="box one" id="25">
+        <span class="number">25</span>
+      </div>
+      <div class="box two" id="20">
+        <span class="number">20</span>
+      </div>
+      <div class="box one" id="19">
+        <span class="number">19</span>
+      </div>
+      <div class="box two" id="18">
+        <span class="number">18</span>
+      </div>
+      <div class="box one" id="17">
+        <span class="number">17</span>
+      </div>
+      <div class="box two" id="16">
+        <span class="number">16</span>
+      </div>
+      <div class="box one" id="11">
+        <span class="number">11</span>
+      </div>
+      <div class="box two" id="12">
+        <span class="number">12</span>
+      </div>
+      <div class="box one" id="13">
+        <span class="number">13</span>
+      </div>
+      <div class="box two" id="14">
+        <span class="number">14</span>
+      </div>
+      <div class="box one" id="15">
+        <span class="number">15</span>
+      </div>
+      <div class="box two" id="10">
+        <span class="number">10</span>
+      </div>
+      <div class="box one" id="9">
+        <span class="number">9</span>
+      </div>
+      <div class="box two" id="8">
+        <span class="number">8</span>
+      </div>
+      <div class="box one" id="7">
+        <span class="number">7</span>
+      </div>
+      <div class="box two" id="6">
+        <span class="number">6</span>
+      </div>
+      <div class="box one" id="1">
+        <span class="number">1</span>
+      </div>
+      <div class="box two" id="2">
+        <span class="number">2</span>
+      </div>
+      <div class="box one" id="3">
+        <span class="number">3</span>
+      </div>
+      <div class="box two" id="4">
+        <span class="number">4</span>
+      </div>
+      <div class="box one" id="5">
+        <span class="number">5</span>
+      </div>
+    </div>
+
+    <div class="snakes-ladders">
+      <div class="ladder-one">
+        <img src="./images/ladder1.png" alt="Ladder one">
+      </div>
+      <div class="ladder-two">
+        <img src="./images/ladder2.png" alt="Ladder two">
+      </div>
+      <div class="snake-one">
+        <img src="./images/snake1.png" alt="Snake one">
+      </div>
+      <div class="snake-two">
+        <img src="./images/snake2.png" alt="Snake two">
+      </div>
+      <div class="snake-three">
+        <img src="./images/snake3.png" alt="Snake three">
+      </div>
+    </div>
+
+    <div class="player one" id="player1">
+      <img src="./images/tiger.png" alt="player one" class="one">
+    </div>
+
+    <div class="player two" id="player2">
+      <img src="./images/elephant.png" alt="player two" class="two">
+    </div>
+  </div>
+
+  <div class="dice-wrapper">
+    <div class="go">
+      <button class="lets-roll dice-roll">Roll Dice</button>
+    </div>
+    <div class="dice"><i class="fas fa-dice-one"></i></div>
+  </div>
+
+</body>
+</html>

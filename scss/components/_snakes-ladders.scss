@@ -1,0 +1,89 @@
+.snakes-ladders {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+
+  .ladder-one {
+    position: absolute;
+    top: 331px;
+    left: 186px;
+    width: 150px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .ladder-two {
+    position: absolute;
+    top: 146px;
+    left: 191px;
+    width: 151px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .snake-one {
+    position: absolute;
+    top: 50px;
+    left: 27px;
+    width: 125px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .snake-two {
+    position: absolute;
+    top: 261px;
+    left: 40px;
+    width: 188px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .snake-three {
+    position: absolute;
+    top: 45px;
+    left: 277px;
+    width: 70px; 
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .snakes-ladders {
+    .ladder-one {
+      top: 327px;
+      left: 214px;
+      width: 159px;
+    }
+
+    .ladder-two {
+      top: 146px;
+      left: 217px;
+      width: 155px;
+    }
+
+    .snake-one {
+      top: 50px;
+      left: 15px;
+      width: 164px;
+    }
+
+    .snake-two {
+      top: 257px;
+      left: 47px;
+      width: 200px;
+    }
+
+    .snake-three {
+      top: 45px;
+      left: 310px;
+      width: 80px;
+    }
+  }
+}

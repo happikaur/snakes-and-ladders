@@ -1,0 +1,19 @@
+.player {
+  position: absolute;
+
+  &.one {
+    display: none;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  &.two {
+    display: none;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}

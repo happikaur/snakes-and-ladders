@@ -1,0 +1,17 @@
+.player {
+  position: absolute;
+}
+.player.one {
+  display: none;
+}
+.player.one img {
+  width: 70px;
+  height: 70px;
+}
+.player.two {
+  display: none;
+}
+.player.two img {
+  width: 70px;
+  height: 70px;
+}
