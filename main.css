@@ -2,46 +2,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-}
-
-.player {
-  position: absolute;
-  z-index: 1;
-}
-.player.one {
-  animation-duration: 1s;
-  animation-direction: normal;
-}
-.player.one img {
-  width: 70px;
-  height: 70px;
-}
-.player.two img {
-  width: 70px;
-  height: 70px;
-}
-
 .board {
   position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 .board .boxes {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: 500px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 .board .boxes .box {
-  width: 100px;
+  max-width: 100px;
+  width: 20%;
   height: 100px;
   padding: 10px;
 }
@@ -129,40 +105,81 @@ body {
   display: none;
 }
 
-.ladder-one {
+.snakes-ladders {
   position: absolute;
-  top: 327px;
-  left: 300px;
+  width: 100%;
+  max-width: 500px;
 }
-
-.ladder-two {
+.snakes-ladders .ladder-one {
   position: absolute;
-  top: 142px;
-  left: 298px;
+  top: 331px;
+  left: 186px;
+  width: 150px;
 }
-
-.snake-one {
+.snakes-ladders .ladder-one img {
+  width: 100%;
+}
+.snakes-ladders .ladder-two {
+  position: absolute;
+  top: 146px;
+  left: 191px;
+  width: 151px;
+}
+.snakes-ladders .ladder-two img {
+  width: 100%;
+}
+.snakes-ladders .snake-one {
   position: absolute;
   top: 50px;
-  left: 100px;
+  left: 27px;
+  width: 125px;
 }
-
-.snake-two {
-  position: absolute;
-  top: 257px;
-  left: 122px;
-  width: 200px;
-}
-.snake-two img {
+.snakes-ladders .snake-one img {
   width: 100%;
 }
-
-.snake-three {
+.snakes-ladders .snake-two {
+  position: absolute;
+  top: 261px;
+  left: 40px;
+  width: 188px;
+}
+.snakes-ladders .snake-two img {
+  width: 100%;
+}
+.snakes-ladders .snake-three {
   position: absolute;
   top: 45px;
-  left: 395px;
-  width: 80px;
+  left: 277px;
+  width: 70px;
 }
-.snake-three img {
+.snakes-ladders .snake-three img {
   width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .snakes-ladders .ladder-one {
+    top: 327px;
+    left: 214px;
+    width: 159px;
+  }
+  .snakes-ladders .ladder-two {
+    top: 146px;
+    left: 217px;
+    width: 155px;
+  }
+  .snakes-ladders .snake-one {
+    top: 50px;
+    left: 15px;
+    width: 164px;
+  }
+  .snakes-ladders .snake-two {
+    top: 257px;
+    left: 47px;
+    width: 200px;
+  }
+  .snakes-ladders .snake-three {
+    top: 45px;
+    left: 310px;
+    width: 80px;
+  }
 }
