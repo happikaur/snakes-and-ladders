@@ -1,4 +1,19 @@
-.dice {
-  background-color: $white;
-  font-size: 40px;
+@import '../abstracts/variables';
+
+.dice-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $box1;
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+
+  .dice {
+    color: $welcome;
+    font-size: 50px;
+    i {
+      margin: 15px;
+    }
+  }
 }

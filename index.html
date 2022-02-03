@@ -10,11 +10,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
-  <h1>SNAKES AND LADDERS</h1>
+  <h1 class="font-dancing heading">SNAKES AND LADDERS</h1>
 
   <div class="welcome-message">
     <p class="welcome font-dancing">Welcome</p>
-    <p class="instructions">Select your avatar</p>
     <div class="choose-avatar">
       <label>
         <img src="./images/tiger.png" alt="player1" class="one">
@@ -23,21 +22,11 @@
         <img src="./images/elephant.png" alt="player2" class="two">
       </label>
     </div>
-    <p class="instructions">Who rolls first?</p>
-    <div class="choose-who-play-first">
-      <label>
-          <input type="radio" name="who-first" class="who-first" value="me"/>
-          <i></i> <span>Me</span>
-      </label>
-      <label>
-          <input type="radio" name="who-first" class="who-first" value="computer"/>
-          <i></i> <span>Computer</span>
-      </label>
-    </div>
     <div class="go">
       <button class="lets-roll">Let's Roll</button>
     </div>
   </div>
+  <div class="welcome-background"></div>
   
   <div class="who-won">
     <p class="greetings font-dancing">Congratulations!</p>
@@ -155,12 +144,10 @@
   </div>
 
   <div class="dice-wrapper">
+    <div class="go">
+      <button class="lets-roll dice-roll">Roll Dice</button>
+    </div>
     <div class="dice"><i class="fas fa-dice-one"></i></div>
-    <!-- <div><i class="fas fa-dice-two"></i></div>
-    <div><i class="fas fa-dice-three"></i></div>
-    <div><i class="fas fa-dice-four"></i></div>
-    <div><i class="fas fa-dice-five"></i></div>
-    <div><i class="fas fa-dice-six"></i></div> -->
   </div>
 
 </body>

@@ -1,18 +1,16 @@
 .player {
   position: absolute;
-  z-index: 1;
 
   &.one {
-    animation-duration: 1s;
-    animation-direction: normal;
-
-    img{
+    display: none;
+    img {
       width: 70px;
-      height:70px;
+      height: 70px;
     }
   }
 
   &.two {
+    display: none;
     img {
       width: 70px;
       height: 70px;

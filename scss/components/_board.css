@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 30px 10px;
 }
 .board .boxes {
   max-width: 500px;
