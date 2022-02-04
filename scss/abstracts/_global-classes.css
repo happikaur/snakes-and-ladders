@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 .font-dancing {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 600;
   color: #290447;
   font-family: "Dancing Script";
@@ -21,4 +21,13 @@
   padding: 10px;
   border-radius: 10px;
   margin: 15px;
+}
+
+.welcome-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 1;
 }
