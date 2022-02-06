@@ -73,7 +73,7 @@ const calculateNewBox = (diceNumber, currentBox) => {
 
 const findBoxPosition = (boxNumber) => {
   const box = document.getElementById(`${boxNumber}`);
-  return box
+  return box;
 }
 
 const movePlayerToBox = (oldBox, newBox, player) => {
@@ -81,13 +81,18 @@ const movePlayerToBox = (oldBox, newBox, player) => {
   // // set interval while box pos is < new box do plus plus
   console.log('Old Box', oldBox, 'New Box', newBox);
 
-  for (let index = oldBox; index < newBox; index++) {
+  for (let index = oldBox; index <= newBox; index++) {
+    if (index === 0) {
+      continue
+    };
 
-    const box = findBoxPosition(index);
-    console.log(box);
-
-    box.appendChild(player);
-    console.log(box.appendChild(player));
+    requestAnimationFrame(() => {
+      const box = findBoxPosition(index);
+      console.log(box);
+  
+      box.appendChild(player);
+      console.log(box.appendChild(player));
+    })
   };
 }
 
