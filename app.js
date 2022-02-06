@@ -59,7 +59,7 @@ const calculateNewBox = (diceNumber, currentBox) => {
 
   if (newBox >= lastBox) {
     isGameEnded = true;
-    movePlayerToBox(lastBox, player1);  
+    movePlayerToBox(currentBox, lastBox, player1);  
     welcomePopUp.style.display = 'none';
     // Pop up of congratulations
     whoWon.innerHTML = store.currentPlayer.id === 'player1' ? 'You Won' : 'Computer Won';
@@ -76,24 +76,33 @@ const findBoxPosition = (boxNumber) => {
   return box
 }
 
-const movePlayerToBox = (newBox, player) => {
-  const box = findBoxPosition(newBox);
-  console.log(box);
-// old box plus plus each box until new box @500ms (set time out)
-// set interval while box pos is < new box do plus plus
-  box.appendChild(player) 
-  console.log(box.appendChild(player));
-}
+const movePlayerToBox = (oldBox, newBox, player) => {
+  // old box plus plus each box until new box @500ms (set time out)
+  // // set interval while box pos is < new box do plus plus
+  console.log('Old Box', oldBox, 'New Box', newBox);
 
+  for (let index = oldBox; index < newBox; index++) {
+
+    const box = findBoxPosition(index);
+    console.log(box);
+
+    box.appendChild(player);
+    console.log(box.appendChild(player));
+  };
+}
 
 const startGame = () => {
   // Role dice
   store.diceNumber = throwDice();
   const currentPlayer = store.currentPlayer
 
-  store[currentPlayer.id].currentBox = calculateNewBox(store.diceNumber, store[currentPlayer.id].currentBox);
+  const oldBox = store[currentPlayer.id].currentBox;
 
-  movePlayerToBox(store[currentPlayer.id].currentBox, store.currentPlayer);
+  const newBox = calculateNewBox(store.diceNumber, oldBox);
+
+  movePlayerToBox(oldBox, newBox, currentPlayer);
+
+  store[currentPlayer.id].currentBox = newBox
 
   if (currentPlayer.id === 'player1') {
     store.currentPlayer = player2;
@@ -135,7 +144,6 @@ playAgain.addEventListener('click', (event) => {
   // the player 1 is not being hidden
   
   // Start the game
-  startGame()
 });
 
 
