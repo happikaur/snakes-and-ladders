@@ -7,14 +7,15 @@ const whoWon = document.querySelector('.won-or-lose');
 const dice = document.querySelector('.dice-roll');
 const diceFont = document.querySelector('.dice');
 const letsRoll = document.querySelector('.lets-roll');
-const welcomeBack = document.querySelector('.welcome-background')
+const welcomeBack = document.querySelector('.welcome-background');
+const playAgain= document.querySelector('.play-again');
 
 let isGameEnded = false;
 const lastBox = 25;
 
 const store = {
-  player1: {x:0, y:0, currentBox:0},
-  player2: {x:0, y:0, currentBox:0},
+  player1: {currentBox: 0},
+  player2: {currentBox: 0},
   diceNumber: 0,
   currentPlayer: player1,
 };
@@ -58,11 +59,13 @@ const calculateNewBox = (diceNumber, currentBox) => {
 
   if (newBox >= lastBox) {
     isGameEnded = true;
-    movePlayerToBox(lastBox, player1);  
+    movePlayerToBox(currentBox, lastBox, player1);  
     welcomePopUp.style.display = 'none';
+    // Pop up of congratulations
     whoWon.innerHTML = store.currentPlayer.id === 'player1' ? 'You Won' : 'Computer Won';
-    congrats.style.display = 'block';
-    return 
+    congrats.style.display = 'flex';
+    welcomeBack.style.display = 'block';
+    return lastBox;
   }
 
   return newBox;
@@ -70,13 +73,27 @@ const calculateNewBox = (diceNumber, currentBox) => {
 
 const findBoxPosition = (boxNumber) => {
   const box = document.getElementById(`${boxNumber}`);
-  return box
+  return box;
 }
 
-const movePlayerToBox = (newBox, player) => {
-  const box = findBoxPosition(newBox);
+const movePlayerToBox = (oldBox, newBox, player) => {
+  // old box plus plus each box until new box @500ms (set time out)
+  // // set interval while box pos is < new box do plus plus
+  console.log('Old Box', oldBox, 'New Box', newBox);
 
-  box.appendChild(player);
+  for (let index = oldBox; index <= newBox; index++) {
+    if (index === 0) {
+      continue
+    };
+
+    requestAnimationFrame(() => {
+      const box = findBoxPosition(index);
+      console.log(box);
+  
+      box.appendChild(player);
+      console.log(box.appendChild(player));
+    })
+  };
 }
 
 const startGame = () => {
@@ -84,9 +101,13 @@ const startGame = () => {
   store.diceNumber = throwDice();
   const currentPlayer = store.currentPlayer
 
-  store[currentPlayer.id].currentBox = calculateNewBox(store.diceNumber, store[currentPlayer.id].currentBox);
+  const oldBox = store[currentPlayer.id].currentBox;
 
-  movePlayerToBox(store[currentPlayer.id].currentBox, store.currentPlayer);
+  const newBox = calculateNewBox(store.diceNumber, oldBox);
+
+  movePlayerToBox(oldBox, newBox, currentPlayer);
+
+  store[currentPlayer.id].currentBox = newBox
 
   if (currentPlayer.id === 'player1') {
     store.currentPlayer = player2;
@@ -101,7 +122,6 @@ const startGame = () => {
 }
 
 dice.addEventListener('click', (event) => {
-  
   startGame()
 });
 
@@ -110,6 +130,27 @@ letsRoll.addEventListener('click', (event) => {
   welcomeBack.style.display = 'none';
 });
 
+// Play again button resets the game to start
+playAgain.addEventListener('click', (event) => {
+  isGameEnded = false;
 
-// Pop up of congratulations
-// Play again resets the game to start
+  // Changes the congrats section to none
+  congrats.style.display = 'none';
+  welcomeBack.style.display = 'none';
+
+  // players need to goes back display none
+  player1.style.display = 'none';
+  player2.style.display = 'none';
+
+  store.player1.currentBox = 0;
+  store.player2.currentBox = 0;
+  store.diceNumber = 0; 
+  store.currentPlayer = player1;
+  // the player 1 is not being hidden
+  
+  // Start the game
+});
+
+
+// Move player box by box
+// When is computer's turn you can't roll the dice
