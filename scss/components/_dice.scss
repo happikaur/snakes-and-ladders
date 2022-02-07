@@ -9,6 +9,11 @@
   margin: 0 auto;
   border-radius: 10px;
 
+  .dice-roll:disabled {
+    filter: blur(1px);
+    cursor: not-allowed;
+  }
+
   .dice {
     color: $welcome;
     font-size: 50px;

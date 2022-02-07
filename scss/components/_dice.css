@@ -8,6 +8,10 @@
   margin: 0 auto;
   border-radius: 10px;
 }
+.dice-wrapper .dice-roll:disabled {
+  filter: blur(1px);
+  cursor: not-allowed;
+}
 .dice-wrapper .dice {
   color: #290447;
   font-size: 50px;

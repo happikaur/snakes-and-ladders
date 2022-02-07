@@ -112,9 +112,15 @@ const startGame = () => {
   if (currentPlayer.id === 'player1') {
     store.currentPlayer = player2;
     player1.style.display = 'block';
+    dice.disabled = true;
+    setTimeout(() => {
+      startGame()
+    }, 1000)
   } else if (currentPlayer.id === 'player2') {
     store.currentPlayer = player1;
     player2.style.display = 'block';
+    dice.disabled = false;
+
   }
 
   console.log(store);
