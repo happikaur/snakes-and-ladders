@@ -79,7 +79,6 @@ const findBoxPosition = (boxNumber) => {
 const movePlayerToBox = (oldBox, newBox, player) => {
   // old box plus plus each box until new box @500ms (set time out)
   // // set interval while box pos is < new box do plus plus
-  console.log('Old Box', oldBox, 'New Box', newBox);
 
   for (let index = oldBox; index <= newBox; index++) {
     if (index === 0) {
@@ -91,7 +90,6 @@ const movePlayerToBox = (oldBox, newBox, player) => {
       console.log(box);
   
       box.appendChild(player);
-      console.log(box.appendChild(player));
     })
   };
 }
@@ -108,17 +106,20 @@ const startGame = () => {
   movePlayerToBox(oldBox, newBox, currentPlayer);
 
   store[currentPlayer.id].currentBox = newBox
-
+  // When is computer's turn you can't roll the dice
   if (currentPlayer.id === 'player1') {
     store.currentPlayer = player2;
     player1.style.display = 'block';
+    dice.disabled = true;
+    setTimeout(() => {
+      startGame()
+    }, 1000)
   } else if (currentPlayer.id === 'player2') {
     store.currentPlayer = player1;
     player2.style.display = 'block';
-  }
+    dice.disabled = false;
 
-  console.log(store);
-  console.log(currentPlayer.id);  
+  }
 }
 
 dice.addEventListener('click', (event) => {
@@ -153,4 +154,3 @@ playAgain.addEventListener('click', (event) => {
 
 
 // Move player box by box
-// When is computer's turn you can't roll the dice
