@@ -49,6 +49,10 @@ const throwDice = () => {
 // Moves box by that number
 // Find the current box of the player
 const calculateNewBox = (diceNumber, currentBox) => {
+  if (isGameEnded) {
+    return
+  }
+
   const newBox = diceNumber + currentBox;
 
   // If in the box with ladder go up to the box number where ladder ends
@@ -59,7 +63,7 @@ const calculateNewBox = (diceNumber, currentBox) => {
 
   if (newBox >= lastBox) {
     isGameEnded = true;
-    movePlayerToBox(currentBox, lastBox, player1);  
+    movePlayerToBox(currentBox, lastBox, store.currentPlayer);
     welcomePopUp.style.display = 'none';
     // Pop up of congratulations
     whoWon.innerHTML = store.currentPlayer.id === 'player1' ? 'You Won' : 'Computer Won';
@@ -111,9 +115,9 @@ const startGame = () => {
     store.currentPlayer = player2;
     player1.style.display = 'block';
     dice.disabled = true;
-    setTimeout(() => {
-      startGame()
-    }, 1000)
+    if (!isGameEnded) {
+      setTimeout(() => startGame(), 1000)
+    }
   } else if (currentPlayer.id === 'player2') {
     store.currentPlayer = player1;
     player2.style.display = 'block';
